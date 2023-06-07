@@ -527,9 +527,8 @@
       }
       function editTransaction(index) {
         const newAmount = prompt("Enter new amount:");
-        if (newAmount !== null) {
-          const parsedAmount = parseFloat(newAmount);
-          if (isNaN(parsedAmount)) {
+        const parsedAmount = parseFloat(newAmount);
+          if (isNaN(parsedAmount) || parsedAmount <= 0) {
             alert("Invalid amount. Please enter a valid number.");
           } else {
             transactions[index] = parsedAmount;
@@ -541,7 +540,7 @@
             document.getElementById("transaction-details-modal").style.display =
               "none";
           }
-        }
+        
       }
       function deleteTransaction(index) {
         const confirmDelete = confirm(
