@@ -537,6 +537,9 @@
             balance = calculateBalance();
             updateBalance();
             updateTransactions();
+            updateChart();
+            document.getElementById("transaction-details-modal").style.display =
+              "none";
           }
         }
       }
